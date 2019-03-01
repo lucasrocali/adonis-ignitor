@@ -472,7 +472,7 @@ class Ignitor {
     /**
      * Start the server
      */
-    Server.listen(Env.get('HOST'), Env.get('PORT'), (error) => {
+    Server.listen(Env.get('HOST'), process.env.PORT || Env.get('PORT'), (error) => {
       if (error) {
         this._printError(error)
         return
